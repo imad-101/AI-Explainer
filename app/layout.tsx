@@ -32,6 +32,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-gradient-to-br from-purple-50 to-indigo-50 min-h-screen `}
         >
