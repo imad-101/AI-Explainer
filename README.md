@@ -27,4 +27,7 @@ This AI Explainer leverages artificial intelligence to explain difficult concept
 3. Set up Clerk for authentication.
 4. Run the development server using `npm start`.
 
+## Check Live Preview Here 
+https://imad-ai-explainer.vercel.app/
+
 Happy explaining! 🎉
