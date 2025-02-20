@@ -48,7 +48,7 @@ export default function LandingPage() {
   }, [currentMessageIndex, demoConversation]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-8  justify-between ">
+    <div className="flex flex-col md:flex-row gap-8 mx-auto justify-between ">
       {/* Left side - Welcome Message */}
       <div className="flex-2 md:ml-28 flex items-center justify-center p-6 mx-auto">
         <div className="max-w-xl space-y-8 md:mt-5 ">
@@ -140,7 +140,7 @@ export default function LandingPage() {
       >
         {user && isSignedIn ? (
           <p className="text-2xl text-gray-700">
-            You Are Already Signed In{" "}
+            You Are Already Signed In... <br />{" "}
             <span className="text-blue-600">
               <Link href={"/chat-bot"}>Click Here To Go To The Dashboard</Link>
             </span>
