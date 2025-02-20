@@ -71,7 +71,7 @@ export default function ChatbotUI() {
   return (
     <div>
       <div className="flex items-center justify-center p-4">
-        <Card className="w-full max-w-4xl shadow-none bg-indigo-200 text-gray-700">
+        <Card className="w-full max-w-6xl shadow-none bg-indigo-200 text-gray-700">
           <CardHeader className="space-y-4">
             <div className="flex items-center justify-between">
               <CardTitle className="text-2xl font-bold">
@@ -113,7 +113,7 @@ export default function ChatbotUI() {
             </Tabs>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[60vh] pr-4 mt-12">
+            <ScrollArea className="h-[50vh] pr-4 mt-12">
               {messages.map((msg, index) => (
                 <div
                   key={index}
