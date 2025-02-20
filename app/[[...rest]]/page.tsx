@@ -45,12 +45,12 @@ export default function LandingPage() {
 
       return () => clearTimeout(timer);
     }
-  }, [currentMessageIndex]);
+  }, [currentMessageIndex, demoConversation]);
 
   return (
     <div className="flex flex-col md:flex-row gap-8  justify-between ">
       {/* Left side - Welcome Message */}
-      <div className="flex-2 md:ml-28 flex items-center justify-center p-6">
+      <div className="flex-2 md:ml-28 flex items-center justify-center p-6 mx-auto">
         <div className="max-w-xl space-y-8 md:mt-5 ">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export default function LandingPage() {
 
           {/* Interactive Animation Demo */}
           <motion.div
-            className="bg-white p-4 rounded-lg shadow-lg"
+            className="bg-white p-4 rounded-lg shadow-lg hidden md:block"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -134,7 +134,10 @@ export default function LandingPage() {
       </div>
 
       {/* Right side - Login/Signup placeholder */}
-      <div className=" md:ml-16 flex-1 flex items-center mx-auto justify-center p-8 mb-5 md:mb-0">
+      <div
+        className=" md:ml-16 flex-1 flex items-center mx-auto justify-center p-2 mb-5 md:mb-0"
+        id="account"
+      >
         {user && isSignedIn ? (
           <p className="text-2xl text-gray-700">
             You Are Already Signed In{" "}

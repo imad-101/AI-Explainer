@@ -71,19 +71,27 @@ export default function ChatbotUI() {
   return (
     <div>
       <div className="flex items-center justify-center p-4">
-        <Card className="w-full max-w-3xl shadow-none bg-indigo-200 text-gray-700">
+        <Card className="w-full max-w-4xl shadow-none bg-indigo-200 text-gray-700">
           <CardHeader className="space-y-4">
             <div className="flex items-center justify-between">
               <CardTitle className="text-2xl font-bold">
-                Explain Like I am in ...
+                Explain Like I am in ..
               </CardTitle>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleNewChat}
-                className="flex items-center gap-1"
+                className="md:flex items-center gap-1 hidden"
               >
                 <Trash2 className="h-4 w-4" /> New Chat
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleNewChat}
+                className="md:hidden"
+              >
+                <Trash2 className="h-4 w-4" />
               </Button>
             </div>
             <Tabs
@@ -91,9 +99,13 @@ export default function ChatbotUI() {
               className="w-full"
               onValueChange={setDifficultyLevel}
             >
-              <TabsList className="grid w-full grid-cols-4 bg-indigo-300">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-4 bg-indigo-300">
                 {difficultyLevels.map((level) => (
-                  <TabsTrigger value={level} key={level}>
+                  <TabsTrigger
+                    value={level}
+                    key={level}
+                    className="text-black md:bg-transparent data-[state=active]:bg-white data-[state=inactive]:bg-indigo-300 md:data-[state=inactive]:bg-transparent"
+                  >
                     {level}
                   </TabsTrigger>
                 ))}
@@ -101,7 +113,7 @@ export default function ChatbotUI() {
             </Tabs>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[50vh] pr-4">
+            <ScrollArea className="h-[60vh] pr-4 mt-12">
               {messages.map((msg, index) => (
                 <div
                   key={index}
@@ -110,7 +122,7 @@ export default function ChatbotUI() {
                   }`}
                 >
                   {msg.role === "bot" && (
-                    <Avatar className="h-8 w-8">
+                    <Avatar className="h-8 w-8 hidden md:block">
                       <AvatarImage src="/bot-avatar.png" alt="AI Bot" />
                       <AvatarFallback>
                         <Brain className="text-gray-500" />
@@ -118,7 +130,7 @@ export default function ChatbotUI() {
                     </Avatar>
                   )}
                   <div
-                    className={`max-w-[70%] p-3 rounded-lg ${
+                    className={` max-w-full  p-3 rounded-lg ${
                       msg.role === "user"
                         ? "bg-indigo-400 text-white"
                         : "bg-gray-100 text-black"
@@ -127,7 +139,7 @@ export default function ChatbotUI() {
                     {msg.content}
                   </div>
                   {msg.role === "user" && (
-                    <Avatar className="h-8 w-8">
+                    <Avatar className="h-8 w-8 hidden md:block">
                       <AvatarImage src="/user-avatar.png" alt="User" />
                       <AvatarFallback>U</AvatarFallback>
                     </Avatar>

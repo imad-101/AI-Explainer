@@ -18,9 +18,9 @@ const Header = () => {
           <UserButton></UserButton>
         </SignedIn>
         <SignedOut>
-          <Link href={"/"}>
-            <Button className="bg-indigo-700 hover:bg-indigo-800">
-              Sign In Below
+          <Link href={"#account"}>
+            <Button className="bg-indigo-700 hover:bg-indigo-800 ">
+              Sign In
             </Button>
           </Link>
         </SignedOut>
