@@ -139,10 +139,10 @@ export default function LandingPage() {
         id="account"
       >
         {user && isSignedIn ? (
-          <p className="text-2xl text-gray-700">
-            You Are Already Signed In... <br />{" "}
+          <p className="text-2xl text-gray-700 mx-auto text-center px-2">
+            You are Already Signed In <br />{" "}
             <span className="text-blue-600">
-              <Link href={"/chat-bot"}>Click Here To Go To The Dashboard</Link>
+              <Link href={"/chat-bot"}>Go To Chat</Link>
             </span>
           </p>
         ) : (
